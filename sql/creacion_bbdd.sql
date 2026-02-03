@@ -55,3 +55,5 @@ CREATE TABLE IF NOT EXISTS evaluacion_y_retencion (
     years_with_curr_manager INT,
     FOREIGN KEY (employee_number) REFERENCES empleados(employee_number)
 );
+ALTER TABLE empleados
+MODIFY education VARCHAR(50);
