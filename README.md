@@ -1,140 +1,187 @@
-# Proyecto: `project-da-promo-59-modulo-3-team-1` 🚀
 
-**Descripción breve**
 
-Análisis de datos de Recursos Humanos orientado a descubrir factores asociados a la rotación de personal (*Attrition*) y a realizar un modelo predictivo para estudiar la probabilidad de abandono.
+📊 Proyecto DA – Transformando el Talento
 
----
+Análisis de rotación de empleados (Attrition)
 
-## 📁 Estructura del repositorio
+1. Descripción del proyecto
 
-- `README.md` — Documento de referencia (este fichero).
-- `files/` — Datos y documentos de entrada:
-  - `hr.csv` — Dataset original.
-  - `hr_clean.csv` — Dataset limpio / preprocesado (resultado de `attrition_clean.ipynb`).
-  - `hr.pdf.pdf` — Documento de referencia (si aplica).
+Este proyecto forma parte del módulo 3 de Data Analytics y tiene como objetivo analizar los factores asociados a la rotación de empleados (Attrition) en una empresa, a partir de un dataset de recursos humanos.
 
-- `notebooks/` — Notebooks del proyecto:
-  - `Alba.ipynb` — Visualizaciones y análisis realizados por Alba.
-  - `attrition_clean.ipynb` — Limpieza y preprocesado del dataset (duplicados, tipos, valores nulos).
-  - `EDA_general.ipynb` — Análisis exploratorio general: distribuciones, missing data, correlaciones.
-  - `Mati_attrition_clean_EDA.ipynb` — EDA focalizado en el dataset limpio (por Mati).
-  - `Mati_attrition.ipynb` — Análisis adicional centrado en la variable *Attrition*.
-  - `Mati_interacciones.ipynb` — Análisis de interacciones entre variables (ej.: JobRole vs OverTime).
-  - `Mati_modelo_predictivo.ipynb` — Pipeline de modelado (preprocesado, entrenamiento y evaluación).
+El trabajo se ha desarrollado de forma colaborativa por un equipo de cuatro personas, abordando el problema desde distintas perspectivas analíticas y técnicas, con el fin de obtener una visión completa y aplicada del fenómeno.
 
-- `outputs/` — Resultados y visualizaciones exportadas:
-  - `clean_attrition/` — Gráficos generados con datos limpios (ej.: `clean_distribucion_attrition.png`).
-  - `conteos_absolutos_attrition/` — Conteos y comparativas por categorías (ej.: `attrition_vs_job_role.png`).
-  - `interacciones/` — Visualizaciones de interacciones (ej.: `attrition_jobRole_overTime.png`).
-  - `not_clean_attrition/` — Gráficos basados en datos sin limpiar.
-  - `proporcion_attrition/` — Gráficos de proporciones y matriz de correlación (ej.: `matriz_correlación.png`).
+2. Dataset y contexto
 
-- `requirements.txt` — Lista de dependencias para reproducir el entorno (generado automáticamente).
+Se trabaja con un dataset de recursos humanos que incluye información demográfica, laboral y económica de los empleados, así como una variable objetivo que indica si el empleado ha abandonado la empresa (Attrition).
 
----
+Durante el proyecto se ha trabajado con:
 
-## 🧭 Propósito y objetivos
+Dataset original (hr.csv)
 
-## 🧭 Propósito y objetivos
+Dataset limpio y transformado (hr_clean.csv), utilizado para los análisis finales, las visualizaciones y el modelo predictivo.
 
-- Realizar un EDA completo para entender la calidad y estructura del dataset.
-- Identificar variables asociadas a *Attrition* (OverTime, WorkLifeBalance, JobSatisfaction, MonthlyIncome, etc.).
-- Generar visualizaciones reproducibles y guardarlas en `outputs/`.
-- Entrenar y evaluar modelos predictivos para estimar la probabilidad de abandono.
+3. Limpieza y transformación de datos
 
----
+En esta fase se realizaron las siguientes tareas:
 
-## ▶️ Orden recomendado para reproducir el análisis
+Análisis de valores nulos y duplicados
 
-1. Abrir y ejecutar `attrition_clean.ipynb` para generar `hr_clean.csv`.
-2. Ejecutar `EDA_general.ipynb` y `Mati_attrition_clean_EDA.ipynb` para análisis y visualizaciones.
-3. Revisar `Mati_interacciones.ipynb` para explorar relaciones específicas entre variables.
-4. Ejecutar `Mati_modelo_predictivo.ipynb` para el pipeline de modelado y evaluación.
+Eliminación de registros duplicados
 
-> Nota: Algunos notebooks usan figuras ya guardadas en `outputs/` para acelerar la reproducción.
+Eliminación de columnas sin valor analítico (identificadores, constantes)
 
----
+Normalización de nombres de columnas
 
-## ⚙️ Cómo ejecutar (recomendado)
+Transformación de variables categóricas y ordinales
 
-### **Fase 1: Análisis Exploratorio de Datos (EDA)**
+Creación de variables auxiliares para el análisis (por ejemplo, versión binaria de Attrition)
 
-En esta fase se realizó un análisis detallado del dataset para comprender:
+Esta fase permite garantizar la calidad del dato y la coherencia de los análisis posteriores.
 
-* La estructura de los datos (dimensiones, tipos de variables).
-* La calidad del dataset (valores duplicados, columnas constantes).
-* La distribución de la variable objetivo **Attrition**.
+📓 Notebook principal:
 
-Se detectó que el dataset está **desbalanceado**, con una proporción mayoritaria de empleados que permanecen en la empresa.
+EDA_general.ipynb
 
-Además, se identificaron 4 filas duplicadas completas al final del conjunto de datos, consideradas un artefacto del proceso de carga.
+4. Análisis Exploratorio de Datos (EDA)
 
----
+Se realizó un análisis exploratorio para comprender la distribución de las variables y su relación con la rotación de empleados.
 
-### **Fase 2: Transformación de los datos (mínima)**
+Entre otros aspectos, se analizaron:
 
-Se realizó una transformación ligera y justificada de los datos, centrada en:
+Distribución general de Attrition
 
-* Revisión y eliminación de filas duplicadas completas.
-* Identificación de columnas sin valor analítico (constantes o identificadores).
-* Verificación de tipos de datos, especialmente variables ordinales.
+Variables de satisfacción y equilibrio vida-trabajo
 
-Todas las transformaciones se documentaron para garantizar trazabilidad y coherencia en las fases posteriores.
+Variables económicas (ingresos)
 
----
+Variables de experiencia y antigüedad
 
-### **Fase 3: Análisis y visualización de datos**
+📈 Outputs principales (dataset limpio):
 
-Se analizaron y visualizaron las siguientes relaciones clave:
+Distribución de Attrition
 
-* **Distribución de Attrition**
-* **Attrition vs OverTime**
-* **Attrition vs WorkLifeBalance**
-* **Attrition vs JobSatisfaction**
-* **Attrition vs MonthlyIncome (Bonus)**
+Attrition vs Job Satisfaction
 
-Las visualizaciones se guardaron en la carpeta `outputs/` para su reutilización en la presentación final.
+Attrition vs Work Life Balance
 
----
+Matriz de correlación (variables numéricas y ordinales)
 
-## 📊 Principales hallazgos
+5. Análisis de Attrition (doble enfoque)
 
-* Los empleados que realizan **horas extra** presentan una tasa de rotación significativamente mayor.
-* Un **bajo equilibrio entre vida personal y laboral** se asocia con mayores niveles de Attrition.
-* A mayor **satisfacción laboral**, menor es la probabilidad de abandono.
-* Los empleados que abandonan la empresa tienden a tener **ingresos mensuales más bajos**, aunque existe solapamiento entre grupos.
+El análisis de la rotación de empleados se aborda desde dos enfoques complementarios, desarrollados por distintas integrantes del equipo, con el objetivo de enriquecer la comprensión del fenómeno.
 
-Estos hallazgos sugieren que factores relacionados con la carga de trabajo, el bienestar y la satisfacción laboral podrían estar asociados a la retención de empleados.
+5.1 Enfoque A – Análisis descriptivo y comparativo (Rocío)
 
----
+El notebook Rocio_attrition_clean.ipynb presenta un análisis descriptivo del Attrition a partir del dataset limpio, centrado en:
 
-## 🛠️ Herramientas utilizadas
+Comparaciones por variables categóricas (género, educación, departamento, estado civil, etc.)
 
-* Python
-* Pandas
-* Matplotlib
-* Jupyter Notebook
-* Git / GitHub
+Análisis de proporciones de rotación por grupo
 
----
+Identificación de patrones generales asociados a la rotación
 
-## 👥 Trabajo en equipo
+Este enfoque permite una visión clara y estructurada de cómo se distribuye el Attrition entre los distintos colectivos.
 
-El proyecto se ha desarrollado en equipo siguiendo buenas prácticas de colaboración:
+5.2 Enfoque B – Análisis en profundidad e interpretación (Mati)
 
-* Uso de Git para control de versiones.
-* División del trabajo por bloques de análisis.
-* Integración posterior de los notebooks.
+El notebook Mati_attrition_clean_EDA.ipynb profundiza en el análisis de Attrition mediante:
 
----
+Comparativas detalladas
 
-## 📌 Estado del proyecto
+Análisis de variables clave (OverTime, Job Satisfaction, Work Life Balance)
 
-Actualmente se han completado las **Fases 1, 2 y 3**. Las fases de diseño de base de datos y creación de ETL quedan fuera del alcance actual o se consideran como posibles extensiones futuras.
+Interpretación orientada a la toma de decisiones
 
----
+Este enfoque aporta una lectura más analítica y contextualizada del fenómeno de la rotación.
 
-## ✍️ Autoras
+Ambos enfoques son coherentes entre sí y refuerzan los principales hallazgos sobre los factores asociados al Attrition.
 
-Proyecto desarrollado por un equipo de 4 personas como parte del Módulo 3 de Data Analytics.
+6. Análisis de interacciones
+
+Se analizan interacciones entre variables clave para comprender cómo ciertos factores combinados influyen en la rotación, especialmente:
+
+OverTime × Job Role
+
+OverTime × Contexto laboral
+
+Este análisis permite identificar perfiles especialmente sensibles a la carga horaria y al rol desempeñado.
+
+📓 Notebook:
+
+Mati_interacciones.ipynb
+
+📈 Output principal:
+
+Attrition por Job Role según OverTime
+
+7. Modelo predictivo (BONUS)
+
+Como análisis avanzado, se desarrolló un modelo predictivo exploratorio para estimar la probabilidad de rotación de los empleados.
+
+Características del modelo:
+
+Modelo de regresión logística
+
+Variables relacionadas con rol, carga horaria, ingresos y antigüedad
+
+Separación train/test con estratificación
+
+Evaluación mediante accuracy, recall y matriz de confusión
+
+El modelo permite:
+
+Validar los patrones detectados en el EDA
+
+Clasificar a los empleados en niveles de riesgo (Bajo, Medio, Alto)
+
+Apoyar la detección temprana de perfiles con mayor probabilidad de abandono
+
+📓 Notebook:
+
+Mati_modelo_predictivo.ipynb
+
+📈 Output principal:
+
+Distribución de niveles de riesgo según OverTime
+
+8. Base de datos y SQL
+
+Se diseñó e implementó una base de datos relacional en MySQL que almacena el dataset limpio y permite consultas estructuradas.
+
+Incluye:
+
+Diseño del esquema relacional
+
+Script de creación de la base de datos
+
+Inserción de datos
+
+📓 Notebooks:
+
+Creacion_BBDD.ipynb
+
+Rocio_Creacion_BBDD.ipynb
+
+📄 SQL:
+
+sql/creacion_bbdd.sql
+
+9. Conclusiones y recomendaciones
+
+El análisis realizado muestra que la rotación de empleados es un fenómeno multifactorial, en el que destacan:
+
+La carga horaria (OverTime) como factor amplificador del riesgo
+
+El rol desempeñado como elemento estructural de vulnerabilidad
+
+Variables de satisfacción y equilibrio personal como factores protectores
+
+El modelo predictivo refuerza estos hallazgos y permite segmentar a los empleados según su nivel de riesgo, facilitando la priorización de intervenciones preventivas por parte de la empresa.
+
+10. Estructura del repositorio
+files/              → datasets originales y limpios
+notebooks/          → análisis, EDA, interacciones, modelo y BBDD
+outputs/            → visualizaciones principales
+sql/                → scripts de creación de base de datos
+README.md           → documentación del proyecto
+requirements.txt    → dependencias
