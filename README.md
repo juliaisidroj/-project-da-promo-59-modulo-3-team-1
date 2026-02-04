@@ -1,50 +1,62 @@
-# Proyecto Módulo 3 – Transformando el Talento
+# Proyecto: `project-da-promo-59-modulo-3-team-1` 🚀
 
-## 📌 Descripción del proyecto
+**Descripción breve**
 
-Este proyecto forma parte del **Módulo 3 de Data Analytics** y se centra en el análisis de datos de recursos humanos con el objetivo de **identificar factores asociados a la rotación de empleados (Attrition)** y a la **satisfacción laboral**.
-
-El análisis se realiza sobre un único dataset de empleados de una empresa ficticia, siguiendo una metodología estructurada por fases y trabajando en equipo mediante buenas prácticas de control de versiones.
+Análisis de datos de Recursos Humanos orientado a descubrir factores asociados a la rotación de personal (*Attrition*) y a realizar un modelo predictivo para estudiar la probabilidad de abandono.
 
 ---
 
-## 🎯 Objetivos
+## 📁 Estructura del repositorio
 
-* Comprender la estructura y calidad del dataset mediante un Análisis Exploratorio de Datos (EDA).
-* Identificar patrones relacionados con la rotación de empleados.
-* Analizar la relación entre la rotación y variables clave como:
+- `README.md` — Documento de referencia (este fichero).
+- `files/` — Datos y documentos de entrada:
+  - `hr.csv` — Dataset original.
+  - `hr_clean.csv` — Dataset limpio / preprocesado (resultado de `attrition_clean.ipynb`).
+  - `hr.pdf.pdf` — Documento de referencia (si aplica).
 
-  * Horas extra (OverTime)
-  * Equilibrio vida-trabajo (WorkLifeBalance)
-  * Satisfacción laboral (JobSatisfaction)
-  * Ingreso mensual (MonthlyIncome – bonus)
-* Generar visualizaciones claras y orientadas a negocio que apoyen la toma de decisiones.
+- `notebooks/` — Notebooks del proyecto:
+  - `Alba.ipynb` — Visualizaciones y análisis realizados por Alba.
+  - `attrition_clean.ipynb` — Limpieza y preprocesado del dataset (duplicados, tipos, valores nulos).
+  - `EDA_general.ipynb` — Análisis exploratorio general: distribuciones, missing data, correlaciones.
+  - `Mati_attrition_clean_EDA.ipynb` — EDA focalizado en el dataset limpio (por Mati).
+  - `Mati_attrition.ipynb` — Análisis adicional centrado en la variable *Attrition*.
+  - `Mati_interacciones.ipynb` — Análisis de interacciones entre variables (ej.: JobRole vs OverTime).
+  - `Mati_modelo_predictivo.ipynb` — Pipeline de modelado (preprocesado, entrenamiento y evaluación).
 
----
+- `outputs/` — Resultados y visualizaciones exportadas:
+  - `clean_attrition/` — Gráficos generados con datos limpios (ej.: `clean_distribucion_attrition.png`).
+  - `conteos_absolutos_attrition/` — Conteos y comparativas por categorías (ej.: `attrition_vs_job_role.png`).
+  - `interacciones/` — Visualizaciones de interacciones (ej.: `attrition_jobRole_overTime.png`).
+  - `not_clean_attrition/` — Gráficos basados en datos sin limpiar.
+  - `proporcion_attrition/` — Gráficos de proporciones y matriz de correlación (ej.: `matriz_correlación.png`).
 
-## 🗂️ Estructura del proyecto
-
-```
-proyecto-modulo-3/
-│
-├── data/
-│   └── hr.csv
-│
-├── notebooks/
-│   ├── eda_attrition.ipynb
-│   ├── eda_overtime_worklife_jobsatisfaction.ipynb
-│   └── eda_monthlyincome_bonus.ipynb
-│
-├── outputs/
-│   └── *.png
-│
-├── README.md
-└── requirements.txt
-```
+- `requirements.txt` — Lista de dependencias para reproducir el entorno (generado automáticamente).
 
 ---
 
-## 🔎 Fases del proyecto
+## 🧭 Propósito y objetivos
+
+## 🧭 Propósito y objetivos
+
+- Realizar un EDA completo para entender la calidad y estructura del dataset.
+- Identificar variables asociadas a *Attrition* (OverTime, WorkLifeBalance, JobSatisfaction, MonthlyIncome, etc.).
+- Generar visualizaciones reproducibles y guardarlas en `outputs/`.
+- Entrenar y evaluar modelos predictivos para estimar la probabilidad de abandono.
+
+---
+
+## ▶️ Orden recomendado para reproducir el análisis
+
+1. Abrir y ejecutar `attrition_clean.ipynb` para generar `hr_clean.csv`.
+2. Ejecutar `EDA_general.ipynb` y `Mati_attrition_clean_EDA.ipynb` para análisis y visualizaciones.
+3. Revisar `Mati_interacciones.ipynb` para explorar relaciones específicas entre variables.
+4. Ejecutar `Mati_modelo_predictivo.ipynb` para el pipeline de modelado y evaluación.
+
+> Nota: Algunos notebooks usan figuras ya guardadas en `outputs/` para acelerar la reproducción.
+
+---
+
+## ⚙️ Cómo ejecutar (recomendado)
 
 ### **Fase 1: Análisis Exploratorio de Datos (EDA)**
 
