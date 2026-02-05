@@ -4,6 +4,17 @@
 
 Análisis de rotación de empleados (Attrition)
 
+## Equipo
+
+Proyecto desarrollado por ONE Team:
+
+- **Alba Jalencas** – Data Analyst  
+- **Julia Isidro** – Data Analyst  
+- **Matilde Cano** – Data Analyst  
+- **Rocío Sánchez** – Data Analyst  
+
+Cada integrante del equipo ha contribuido al proyecto desde distintas perspectivas analíticas y técnicas.
+
 1. Descripción del proyecto
 
 Este proyecto forma parte del módulo 3 de Data Analytics y tiene como objetivo analizar los factores asociados a la rotación de empleados (Attrition) en una empresa, a partir de un dataset de recursos humanos.
